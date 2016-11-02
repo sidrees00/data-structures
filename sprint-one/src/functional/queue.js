@@ -6,13 +6,15 @@ var Queue = function() {
   var size = 0;
   // Implement the methods below
   someInstance.enqueue = function(value) {
+    size++;
   };
 
   someInstance.dequeue = function() {
+    size--;
   };
 
   someInstance.size = function() {
-    ret
+    return size;
   };
 
   return someInstance;
