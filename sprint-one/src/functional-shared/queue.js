@@ -4,16 +4,13 @@ var Queue = function() {
   var someInstance = {};
   someInstance.queueValues = {};
   someInstance.queueSize = 0;
-  extend(someInstance, queueMethods);
+  _.extend(someInstance, queueMethods);
+
   return someInstance;
 
 };
 
-var extend = function(obj1, obj2) {
-  for (var key in obj2) {
-    obj1[key] = obj2[key];
-  }
-}
+
 
 
 var queueMethods = {};
@@ -32,12 +29,11 @@ queueMethods.dequeue = function() {
   if (this.queueSize > 0) {
     this.queueSize--;
   }
-  // var returnItem = this.queueValues[0];
-  // for (var i = 1; i < this.queueSize; i++) {
-  //   this.queueValues[i - 1] = this.queueValues[i];
-  // }
-  // delete this.queueValues[queueSize - 1];
+  var returnItem = this.queueValues[0];
 
+  for (var i = 0; i < this.queueSize; i++) {
+    this.queueValues[i] = this.queueValues[i + 1];
+  }
 
-  // return returnItem;
+  return returnItem;
 };
