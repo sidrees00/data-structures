@@ -16,7 +16,7 @@ var Queue = function() {
     for (var i = 1; i < size; i++) {
       storage[i - 1] = storage[i];
     }
-    delete storage[size];
+    delete storage[size - 1];
     if (size > 0) {
       size--;
 
