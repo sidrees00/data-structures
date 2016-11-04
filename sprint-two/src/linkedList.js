@@ -39,7 +39,8 @@ var LinkedList = function() {
   list.contains = function(target) {
     //Our variable to hold our current node starting at head.
     var currentNode = list.head;
-    while (currentNode.next !== null) {
+    
+    while (currentNode !== null) {
       if (currentNode.value === target) {
         return true;
       } else {
