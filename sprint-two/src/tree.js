@@ -6,7 +6,7 @@ var Tree = function(value) {
   //We want to link treeMethods to Tree.
   _.extend(newTree, treeMethods);
 
-  newTree.children = [];  // fix me
+  newTree.children = [];  
 
   return newTree;
 };
