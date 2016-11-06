@@ -4,8 +4,8 @@ var BinarySearchTree = function(value) {
 
   //Define properties:
   tree.value = value;
-  tree.left;
-  tree.right;
+  tree.left = null;
+  tree.right = null;
 
 
   // Create methods:
@@ -16,17 +16,35 @@ var BinarySearchTree = function(value) {
     var newNode = BinarySearchTree(nodeValue);
     //Compare the values of the new node to the parent node
     if (newNode.value > tree.value) {
-      //If the node is greater tha ,n you place it to the right of the existing node.
+      //If the node is greater, then you place it to the right of the existing node.
+      if(tree.right === null){
+        tree.right = newNode
+      }
+      else{
+        tree.right.insert(nodeValue);
+      }
       
     }
+    //If its not place it to the left.
+    else if (newNode.value < tree.value) {
+      //If the node is less than, then you place it to the left of the existing node.
+      if(tree.left === null){
+        tree.left = newNode
+      }
+      else{
+        tree.left.insert(nodeValue)
+      }
+      
+    }
+    console.log(tree);
 
-      //If its not place it to the left.
 
 
   }; 
   
   // Checks to see if tree contains value
   tree.contains = function(nodeValue) {
+    
 
   };
 
