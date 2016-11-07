@@ -44,13 +44,28 @@ var BinarySearchTree = function(value) {
   
   // Checks to see if tree contains value
   tree.contains = function(nodeValue) {
+    if(nodeValue === this.value){
+      return true;
+    }
+    else if(nodeValue < this.value){
+      return this.left ? this.left.contains(nodeValue) : false;
+    }
+    else if(nodeValue > this.value){
+      return this.right ? this.right.contains(nodeValue) : false;
+    }
     
-
   };
 
   // executes callback on each value in tree
   tree.depthFirstLog = function(callback) {
+    callback(this.value);
 
+    if(this.left){
+      this.left.depthFirstLog(callback);
+    }
+    else if(this.right){
+      this.right.depthFirstLog(callback)
+    }
   };
 
 
